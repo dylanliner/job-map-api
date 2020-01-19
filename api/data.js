@@ -24,13 +24,14 @@ module.exports = (req, res) => {
     }
   };
   var index = 0;
-  var stream = JSONStream.parse(['resultats', true, 'lieuTravail']);
+  var stream = JSONStream.parse(['resultats', true]);
   stream.on('data', function (data) {
-    if (data.longitude && data.latitude) {
+    var lieuTravail = data.lieuTravail
+    if (lieuTravail.longitude && lieuTravail.latitude && data.intitule && data.origineOffre.urlOrigine ) {
       var lngLat = [];
-      lngLat.push(data.longitude)
-      lngLat.push(data.latitude)
-      var pos = { COORDINATES: lngLat };
+      lngLat.push(lieuTravail.longitude)
+      lngLat.push(lieuTravail.latitude)
+      var pos = { COORDINATES: lngLat, intitule:data.intitule, url: data.origineOffre.urlOrigine };
       res.write(((index === 0) ? '[' : ',') + JSON.stringify(pos));
       index++
     }
