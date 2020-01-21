@@ -8,8 +8,5 @@
   },
   "scripts": {
     "start": "node api/date.js"
-  },
-  "dependencies": {
-    "rollup": "^1.29.0"
   }
 }
