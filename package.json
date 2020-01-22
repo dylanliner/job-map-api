@@ -2,11 +2,16 @@
   "name": "job-map-api",
   "version": "1.0.0",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "JSONStream": "^1.3.5",
     "dotenv": "^8.2.0",
     "request": "^2.88.0"
   },
   "scripts": {
     "start": "node api/date.js"
+  },
+  "dependencies": {
+    "rollup": "^1.29.1"
   }
 }
