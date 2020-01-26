@@ -45,12 +45,8 @@ module.exports = (req, res) => {
   request(tokenRequestOptions, function (error, response, body) {
     if (error) throw new Error(error);
     var token = JSON.parse(body).access_token;
-
-    request.get('https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search', {
-      'auth': {
-        'bearer': token
-      }
-    }).pipe(stream)
+    var url='https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search'
+    request.get({url:url, qs:req.query}).auth(null, null, true, token).pipe(stream)
   })
 
 };
