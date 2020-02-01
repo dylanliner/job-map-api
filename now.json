@@ -3,6 +3,7 @@
         "POLE_EMPLOI_URL_TOKEN": "@pole_emploi_url_token",
         "POLE_EMPLOI_CLIENT_ID": "@pole_emploi_client_id",
         "POLE_EMPLOI_CLIENT_SECRET": "@pole_emploi_client_secret",
-        "POLE_EMPLOI_SCOPE": "@pole_emploi_scope"
+        "POLE_EMPLOI_SCOPE": "@pole_emploi_scope",
+        "POLE_EMPLOI_OFFRES":"@pole_emploi_offres"
     }
 }
