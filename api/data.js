@@ -27,7 +27,11 @@ module.exports = (req, res) => {
   var stream = JSONStream.parse(['resultats', true]);
   stream.on('data', function (data) {
     var lieuTravail = data.lieuTravail
-    if (lieuTravail.longitude && lieuTravail.latitude && data.intitule && data.origineOffre.urlOrigine ) {
+    var entreprise = data.entreprise
+    if(entreprise && entreprise.nom){
+      data.intitule=data.intitule+' - '+entreprise.nom
+    }
+    if (lieuTravail.longitude && lieuTravail.latitude && data.intitule && data.origineOffre.urlOrigine) {
       var lngLat = [];
       lngLat.push(lieuTravail.longitude)
       lngLat.push(lieuTravail.latitude)
